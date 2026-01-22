@@ -1,7 +1,4 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import AppFooter from "~/components/AppFooter.vue";
-import AppHeader from "~/components/AppHeader.vue";
 import { navLinks } from "~/utils/links";
 </script>
 

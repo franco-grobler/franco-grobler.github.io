@@ -13,14 +13,13 @@
       }"
     >
       <template #list-trailing>
-        <ColourModeBtn />
+        <BtnColourMode />
       </template>
     </UNavigationMenu>
   </div>
 </template>
 
 <script setup lang="ts">
-import ColourModeBtn from "./buttons/ColourModeBtn.vue";
 import type { NavigationMenuItem } from "@nuxt/ui";
 
 defineProps<{
