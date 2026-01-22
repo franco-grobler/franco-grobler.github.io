@@ -1,5 +1,3 @@
-// import { defineAppConfig } from "#app/nuxt";
-
 export default defineAppConfig({
 	global: {
 		picture: {
@@ -9,7 +7,7 @@ export default defineAppConfig({
 			alt: "My profile picture",
 		},
 		meetingLink: "https://cal.com/",
-		email: "ui-pro@nuxt.com",
+		email: "franco@grobler.fyi",
 		available: true,
 	},
 	ui: {
@@ -27,24 +25,18 @@ export default defineAppConfig({
 		},
 	},
 	footer: {
-		credits: `Built with Nuxt UI • © ${new Date().getFullYear()}`,
+		credits: `Built with Nuxt • © ${new Date().getFullYear()}`,
 		colorMode: false,
 		links: [
 			{
-				icon: "i-simple-icons-discord",
-				to: "https://go.nuxt.com/discord",
+				icon: "i-simple-icons-linkedin",
+				to: "https://www.linkedin.com/in/franco-grobler-4b26a3156/",
 				target: "_blank",
-				"aria-label": "Nuxt on Discord",
-			},
-			{
-				icon: "i-simple-icons-x",
-				to: "https://go.nuxt.com/x",
-				target: "_blank",
-				"aria-label": "Nuxt on X",
+				"aria-label": "LinkedIn",
 			},
 			{
 				icon: "i-simple-icons-github",
-				to: "https://github.com/nuxt/ui",
+				to: "https://github.com/franco-grobler",
 				target: "_blank",
 				"aria-label": "Nuxt UI on GitHub",
 			},
