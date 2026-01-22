@@ -1,9 +1,3 @@
-<script setup lang="ts">
-import { useAppConfig } from "#app";
-
-const { footer } = useAppConfig();
-</script>
-
 <template>
   <UFooter class="z-10 bg-default" :ui="{ left: 'text-muted text-xs' }">
     <template #left>
@@ -21,3 +15,9 @@ const { footer } = useAppConfig();
     </template>
   </UFooter>
 </template>
+
+<script setup lang="ts">
+import { useAppConfig } from "#app";
+
+const { footer } = useAppConfig();
+</script>
