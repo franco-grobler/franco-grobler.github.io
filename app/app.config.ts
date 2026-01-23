@@ -29,15 +29,15 @@ export default defineAppConfig({
     colorMode: false,
     links: [
       {
-        icon: "i-simple-icons-linkedin",
-        to: "https://www.linkedin.com/in/franco-grobler-4b26a3156/",
-        target: "_blank",
+        "icon": "i-simple-icons-linkedin",
+        "to": "https://www.linkedin.com/in/franco-grobler-4b26a3156/",
+        "target": "_blank",
         "aria-label": "LinkedIn",
       },
       {
-        icon: "i-simple-icons-github",
-        to: "https://github.com/franco-grobler",
-        target: "_blank",
+        "icon": "i-simple-icons-github",
+        "to": "https://github.com/franco-grobler",
+        "target": "_blank",
         "aria-label": "Nuxt UI on GitHub",
       },
     ],

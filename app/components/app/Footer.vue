@@ -1,5 +1,8 @@
 <template>
-  <UFooter class="z-10 bg-default" :ui="{ left: 'text-muted text-xs' }">
+  <UFooter
+    class="z-10 bg-default"
+    :ui="{ left: 'text-muted text-xs' }"
+  >
     <template #left>
       {{ footer.credits }}
     </template>
@@ -17,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { useAppConfig } from "#app";
+  import { useAppConfig } from "#app";
 
-const { footer } = useAppConfig();
+  const { footer } = useAppConfig();
 </script>
