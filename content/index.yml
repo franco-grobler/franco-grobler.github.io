@@ -50,5 +50,7 @@ projects:
 
 research:
   title: Writing & Research
-  link: /research
-  cards: []
+  link:
+    label: View all research
+    route: /research
+  cards: ["modern-dinosaurs"]

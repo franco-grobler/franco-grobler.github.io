@@ -20,7 +20,7 @@
 
     <div class="mt-3 flex flex-row gap-2">
       <Chip
-        v-for="(tag, idx) in tags"
+        v-for="(tag, idx) in tags.toSorted()"
         :key="idx"
         :text="tag"
       />

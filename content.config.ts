@@ -88,5 +88,15 @@ export default defineContentConfig({
 				links: z.array(ExternalLinkSchema),
 			}),
 		}),
+		research: defineCollection({
+			type: "page",
+			source: "research/*.md",
+			schema: z.object({
+				title: z.string(),
+				date: z.iso.date(),
+				"read-time": z.coerce.number(),
+				links: z.array(ExternalLinkSchema),
+			}),
+		}),
 	},
 });

@@ -13,6 +13,10 @@
       v-if="projects"
       :projects="projects"
     />
+    <LandingResearch
+      v-if="research"
+      :research="research"
+    />
   </UPage>
 </template>
 
