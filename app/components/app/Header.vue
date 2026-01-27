@@ -3,7 +3,7 @@
     class="bg-background/80 fixed top-0 right-0 left-0 z-50 border-b border-white/10 backdrop-blur-xl"
   >
     <div
-      className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 flex h-16 items-center justify-between"
+      class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-12"
     >
       <RouterLink
         :to="header.home.to"
@@ -14,7 +14,6 @@
 
       <UNavigationMenu
         :items="links"
-        class="w-fit"
         color="neutral"
         highlight
         highlight-color="accent"
