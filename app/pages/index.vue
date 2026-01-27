@@ -9,6 +9,10 @@
       v-if="skills"
       :skills="skills"
     />
+    <LandingProjects
+      v-if="projects"
+      :projects="projects"
+    />
   </UPage>
 </template>
 
@@ -31,6 +35,12 @@
   );
   const skills = computed<IndexCollectionItem["skills"] | undefined>(
     () => page.value?.skills,
+  );
+  const projects = computed<IndexCollectionItem["projects"] | undefined>(
+    () => page.value?.projects,
+  );
+  const research = computed<IndexCollectionItem["research"] | undefined>(
+    () => page.value?.research,
   );
 
   useSeoMeta({

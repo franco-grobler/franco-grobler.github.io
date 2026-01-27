@@ -40,3 +40,15 @@ skills:
         "Implementing CI/CD pipelines, container orchestration, and
         infrastructure as code."
       icon: lucide:cloud
+
+projects:
+  title: Featured projects
+  link:
+    label: View all projects
+    route: /projects
+  cards: ["localstack-ses-viewer"]
+
+research:
+  title: Writing & Research
+  link: /research
+  cards: []

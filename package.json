@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@iconify-json/lucide": "^1.2.83",
+    "@iconify-json/material-symbols": "^1.2.53",
     "@iconify-json/simple-icons": "^1.2.67",
     "@playwright/test": "^1.57.0",
     "@tiptap/extension-drag-handle": "^3.16.0",

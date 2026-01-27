@@ -1,5 +1,6 @@
 import { defineContentConfig, defineCollection, property } from "@nuxt/content";
-import { z, type ZodObject } from "zod";
+import type { ZodObject, ZodString } from "zod";
+import { z } from "zod";
 
 const SeoSchame = z.object({
 	title: z.string().nonempty(),
@@ -11,17 +12,32 @@ const PageTitleSchema = z.object({
 	description: z.string().nonempty(),
 });
 
-function generateSectionSchema(card: ZodObject): ZodObject {
+function generateSectionSchema(card: ZodString | ZodObject) {
 	return z.object({
 		title: z.string().nonempty(),
 		cards: z.array(card),
 	});
 }
 
+function generateSectionSchemaWithRoute(card: ZodString | ZodObject) {
+	return generateSectionSchema(card).extend({
+		link: z.object({
+			label: z.string().nonempty(),
+			route: z.string().nonempty(),
+		}),
+	});
+}
+
+const ExternalLinkSchema = z.object({
+	icon: z.string().nonempty(),
+	label: z.string().nonempty(),
+	url: z.string().nonempty(),
+});
+
 export default defineContentConfig({
 	collections: {
 		index: defineCollection({
-			type: "page",
+			type: "data",
 			source: "index.yml",
 			schema: z.object({
 				seo: SeoSchame,
@@ -43,6 +59,8 @@ export default defineContentConfig({
 						icon: z.string().nonempty(),
 					}),
 				),
+				projects: generateSectionSchemaWithRoute(z.string().nonempty()),
+				research: generateSectionSchemaWithRoute(z.string().nonempty()),
 			}),
 		}),
 		blog: defineCollection({
@@ -60,9 +78,15 @@ export default defineContentConfig({
 				}),
 			}),
 		}),
-		content: defineCollection({
+		projects: defineCollection({
 			type: "page",
-			source: "**/*.md",
+			source: "projects/*.md",
+			schema: z.object({
+				title: z.string(),
+				description: z.string().nonempty(),
+				tags: z.array(z.string().nonempty()),
+				links: z.array(ExternalLinkSchema),
+			}),
 		}),
 	},
 });
