@@ -1,7 +1,7 @@
 <template>
   <UApp>
     <NuxtLayout>
-      <UMain class="relative">
+      <UMain class="relative w-full">
         <NuxtPage />
       </UMain>
     </NuxtLayout>
