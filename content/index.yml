@@ -1,0 +1,42 @@
+seo:
+  title: "Franco Grobler - Engineer"
+  description:
+    "Welcome to my portfolio! I'm Franco Grobler, an electric and electronic
+    engineer writing code and building things."
+
+intro:
+  title: "Building scalable systems with precision"
+  subtitle: "Senior Software Engineer | DevOps Engineer | Builder"
+  description:
+    "Specialized in distributed systems, cloud infrastructure, and full-stack
+    development. Currently completing a Master's in Computer Science while
+    architecting solutions at scale."
+  links:
+    - to: /projects
+      label: View projects
+      icon: material-symbols:arrow-right-alt
+      class: bg-foreground text-background hover:bg-foreground/90
+    - to: /contact
+      label: Get in touch
+      class:
+        bg-secondary border border-white/10 rounded-lg hover:bg-secondary/80
+        text-primary
+
+skills:
+  title: What I do
+  cards:
+    - title: Full-stack development
+      description:
+        Building robust, scalable web applications with modern frameworks and
+        best practices.
+      icon: lucide:code-xml
+    - title: Distributed Systems
+      description:
+        Designing fault-tolerant architectures that handle millions of requests
+        with high reliability.
+      icon: lucide:server
+    - title: "Cloud Infrastructure"
+      description:
+        "Implementing CI/CD pipelines, container orchestration, and
+        infrastructure as code."
+      icon: lucide:cloud
