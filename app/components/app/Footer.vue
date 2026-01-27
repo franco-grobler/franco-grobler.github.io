@@ -1,6 +1,6 @@
 <template>
   <UFooter
-    class="z-10 bg-default"
+    class="bg-background z-10"
     :ui="{ left: 'text-muted text-xs' }"
   >
     <template #left>

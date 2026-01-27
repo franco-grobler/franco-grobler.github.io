@@ -1,28 +1,44 @@
 <template>
   <div
-    class="fixed top-2 sm:top-4 mx-auto left-1/2 transform -translate-x-1/2 z-10"
+    class="bg-background/80 fixed top-0 right-0 left-0 z-50 border-b border-white/10 backdrop-blur-xl"
   >
-    <UNavigationMenu
-      :items="links"
-      variant="link"
-      color="neutral"
-      class="bg-muted/80 backdrop-blur-sm rounded-full px-2 sm:px-4 border border-muted/50 shadow-lg shadow-neutral-950/5"
-      :ui="{
-        link: 'px-2 py-1',
-        linkLeadingIcon: 'hidden',
-      }"
+    <div
+      className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 flex h-16 items-center justify-between"
     >
-      <template #list-trailing>
-        <BtnColourMode />
-      </template>
-    </UNavigationMenu>
+      <RouterLink
+        :to="header.home.to"
+        class="text-foreground hover:text-accent text-xl font-medium transition-colors"
+      >
+        {{ header.home.label }}
+      </RouterLink>
+
+      <UNavigationMenu
+        :items="links"
+        class="w-fit"
+        color="neutral"
+        highlight
+        highlight-color="accent"
+        variant="link"
+        :ui="{
+          linkLeadingIcon: 'hidden',
+        }"
+      >
+        <template #list-trailing>
+          <BtnColourMode />
+        </template>
+      </UNavigationMenu>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
   import type { NavigationMenuItem } from "@nuxt/ui";
 
+  import { useAppConfig } from "#app";
+
   defineProps<{
     links: NavigationMenuItem[];
   }>();
+
+  const { header } = useAppConfig();
 </script>
