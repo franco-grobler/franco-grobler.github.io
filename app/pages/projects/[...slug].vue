@@ -1,3 +1,10 @@
+<template>
+  <ContentRenderer
+    v-if="page"
+    :value="page"
+  />
+</template>
+
 <script setup lang="ts">
   import { createError, useAsyncData } from "#app";
   import { queryCollection } from "#imports";
@@ -6,7 +13,7 @@
   const route = useRoute();
 
   const { data: page } = await useAsyncData("page-" + route.path, () => {
-    return queryCollection("content").path(route.path).first();
+    return queryCollection("projects").path(route.path).first();
   });
 
   if (!page.value) {
@@ -17,10 +24,3 @@
     });
   }
 </script>
-
-<template>
-  <ContentRenderer
-    v-if="page"
-    :value="page"
-  />
-</template>
