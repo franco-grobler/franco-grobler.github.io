@@ -1,5 +1,5 @@
 <template>
-  <div class="flex w-full flex-col gap-4">
+  <section class="flex w-full flex-col gap-4">
     <!-- sub-title -->
     <div
       class="bg-secondary text-muted-foreground mb-6 inline-block w-fit rounded-full border border-white/10 px-4 py-1.5 text-sm"
@@ -35,7 +35,7 @@
         :class="l.class"
       />
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
