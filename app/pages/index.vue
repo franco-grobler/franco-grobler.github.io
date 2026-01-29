@@ -23,7 +23,7 @@
 <script setup lang="ts">
   import type { IndexCollectionItem } from "@nuxt/content";
 
-  const { data: page } = await useAsyncData("index", () => {
+  const { data: page } = await useAsyncData("home-index", () => {
     return queryCollection("index").first();
   });
   if (!page.value) {
