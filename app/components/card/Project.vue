@@ -25,6 +25,13 @@
           :text="tag"
         />
       </div>
+
+      <div
+        v-if="impact"
+        class="bg-background mt-4 rounded-lg border border-white/10 p-4"
+      >
+        {{ impact }}
+      </div>
     </UCard>
   </NuxtLink>
 </template>
@@ -34,6 +41,7 @@
     title: string;
     description: string;
     tags: string[];
+    impact?: string;
     slug: string;
   }>();
 </script>
