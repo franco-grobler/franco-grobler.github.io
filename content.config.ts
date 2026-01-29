@@ -63,6 +63,14 @@ export default defineContentConfig({
 				research: generateSectionSchemaWithRoute(z.string().nonempty()),
 			}),
 		}),
+		blogIndex: defineCollection({
+			type: "data",
+			source: "blog.yml",
+			schema: z.object({
+				seo: SeoSchame,
+				heading: PageTitleSchema,
+			}),
+		}),
 		blog: defineCollection({
 			type: "page",
 			source: "blog/*.md",
@@ -78,6 +86,14 @@ export default defineContentConfig({
 				}),
 			}),
 		}),
+		projectsIndex: defineCollection({
+			type: "data",
+			source: "projects.yml",
+			schema: z.object({
+				seo: SeoSchame,
+				heading: PageTitleSchema,
+			}),
+		}),
 		projects: defineCollection({
 			type: "page",
 			source: "projects/*.md",
@@ -86,6 +102,14 @@ export default defineContentConfig({
 				description: z.string().nonempty(),
 				tags: z.array(z.string().nonempty()),
 				links: z.array(ExternalLinkSchema),
+			}),
+		}),
+		researchIndex: defineCollection({
+			type: "data",
+			source: "research.yml",
+			schema: z.object({
+				seo: SeoSchame,
+				heading: PageTitleSchema,
 			}),
 		}),
 		research: defineCollection({

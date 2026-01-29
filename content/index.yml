@@ -5,12 +5,12 @@ seo:
     engineer writing code and building things."
 
 intro:
-  title: "Building scalable systems with precision"
-  subtitle: "Senior Software Engineer | DevOps Engineer | Builder"
+  title: Building scalable systems with precision
+  subtitle: Senior Software Engineer | DevOps Engineer | Builder
   description:
-    "Specialized in distributed systems, cloud infrastructure, and full-stack
+    Specialised in distributed systems, cloud infrastructure, and full-stack
     development. Currently completing a Master's in Computer Science while
-    architecting solutions at scale."
+    architecting solutions at scale.
   links:
     - to: /projects
       label: View projects

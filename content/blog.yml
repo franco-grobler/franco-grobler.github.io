@@ -1,0 +1,10 @@
+seo:
+  title: &title Blogs
+  description:
+    &description Technical writing on distributed systems, software
+    architecture, and engineering practices. Sharing insights from building and
+    scaling complex systems.
+
+heading:
+  title: *title
+  description: *description
