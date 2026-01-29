@@ -101,6 +101,7 @@ export default defineContentConfig({
 				title: z.string(),
 				description: z.string().nonempty(),
 				tags: z.array(z.string().nonempty()),
+				impact: z.string().nonempty(),
 				links: z.array(ExternalLinkSchema),
 			}),
 		}),

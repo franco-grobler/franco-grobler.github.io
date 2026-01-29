@@ -3,6 +3,7 @@ title: LocalStack SES Viewer
 description:
   A simple utility website to view messages on a LocalStack message queue.
 tags: ["Vue", "Github Actions", "LocalStack", "TypeScript"]
+impact: "Increased team velocity by providing an easier feedback loop."
 links:
   - icon: "i-simple-icons-github"
     url: "https://github.com/franco-grobler/localstack-ses-viewer"
