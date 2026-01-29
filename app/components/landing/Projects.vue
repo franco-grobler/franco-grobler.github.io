@@ -28,6 +28,8 @@
         "IN",
         props.projects.cards.flatMap((s) => `projects/${s}`),
       )
+      .select("title", "description", "tags", "stem")
+      .limit(3)
       .all();
   });
 </script>

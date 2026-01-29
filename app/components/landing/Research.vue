@@ -29,6 +29,7 @@
         "IN",
         props.research.cards.flatMap((s) => `research/${s}`),
       )
+      .limit(3)
       .all();
   });
 </script>
