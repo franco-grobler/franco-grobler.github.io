@@ -18,7 +18,7 @@
 
     <!-- description -->
     <div>
-      <p className="text-xl text-muted-foreground max-w-2xl mb-8">
+      <p class="text-muted-foreground mb-8 max-w-2xl text-xl">
         {{ details.description }}
       </p>
     </div>
