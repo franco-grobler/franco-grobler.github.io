@@ -1,6 +1,6 @@
 <template>
   <UCard
-    class="w-full"
+    class="bouncing-card w-full"
     :to="`/research/${slug}`"
   >
     <template #header>

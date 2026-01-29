@@ -1,5 +1,5 @@
 <template>
-  <UCard>
+  <UCard class="bouncing-card">
     <template #header>
       <div
         class="bg-accent/10 border-accent/20 mb-4 flex size-14 items-center justify-center rounded-lg border"

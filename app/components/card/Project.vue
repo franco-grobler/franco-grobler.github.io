@@ -1,31 +1,32 @@
 <template>
-  <UCard class="w-full">
-    <template #header>
-      <div class="flex flex-row justify-between">
-        <h3 class="text-xl font-medium">
-          {{ title }}
-        </h3>
-        <UButton
-          icon="i-lucide-arrow-right"
-          variant="link"
-          :to="`/projects/${slug}`"
-          class="text-muted-foreground"
+  <NuxtLink :to="`/projects/${slug}`">
+    <UCard class="bouncing-card w-full">
+      <template #header>
+        <div class="flex flex-row justify-between">
+          <h3 class="text-xl font-medium">
+            {{ title }}
+          </h3>
+          <UButton
+            icon="i-lucide-arrow-right"
+            variant="link"
+            class="text-muted-foreground"
+          />
+        </div>
+      </template>
+
+      <p class="text-muted-foreground">
+        {{ description }}
+      </p>
+
+      <div class="mt-3 flex flex-row gap-2">
+        <Chip
+          v-for="(tag, idx) in tags.toSorted()"
+          :key="idx"
+          :text="tag"
         />
       </div>
-    </template>
-
-    <p class="text-muted-foreground">
-      {{ description }}
-    </p>
-
-    <div class="mt-3 flex flex-row gap-2">
-      <Chip
-        v-for="(tag, idx) in tags.toSorted()"
-        :key="idx"
-        :text="tag"
-      />
-    </div>
-  </UCard>
+    </UCard>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">
