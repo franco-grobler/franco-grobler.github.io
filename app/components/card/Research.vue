@@ -6,7 +6,12 @@
     <template #header>
       <div class="flex flex-col">
         <div class="text-muted-foreground mb-4 flex items-center gap-3 text-sm">
-          <span> {{ dateString }} </span>
+          <NuxtTime
+            :datetime="date"
+            day="numeric"
+            month="short"
+            year="numeric"
+          />
           <span> · </span>
           <span> {{ readTime }} min read </span>
         </div>
@@ -23,18 +28,11 @@
 </template>
 
 <script setup lang="ts">
-  const props = defineProps<{
+  defineProps<{
     title: string;
     date: string;
     readTime: number;
     description: string;
     slug: string;
   }>();
-  const dateString = computed<string>(() =>
-    new Date(props.date).toLocaleDateString(undefined, {
-      day: "numeric",
-      month: "short",
-      year: "numeric",
-    }),
-  );
 </script>
