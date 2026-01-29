@@ -200,3 +200,9 @@
     transition: color 0.2s ease;
   }
 }
+
+@layer components {
+  .bouncing-card {
+    @apply transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105;
+  }
+}
