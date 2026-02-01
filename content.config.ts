@@ -78,6 +78,7 @@ export default defineContentConfig({
 				title: z.string(),
 				description: z.string().optional(),
 				date: z.date(),
+				topic: z.string().nonempty(),
 				draft: z.boolean().default(false),
 				tags: z.array(z.string()).optional(),
 				image: z.object({

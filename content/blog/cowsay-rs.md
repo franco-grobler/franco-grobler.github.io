@@ -2,7 +2,7 @@
 title: cowsay-rs
 description: A rust rewrite of the classic cowsay ASCII art project.
 date: 2026-01-29
-theme: Software
+topic: Software
 tags: ["Rust", "CLI", "Open Source"]
 ---
 
