@@ -4,7 +4,26 @@
     :title="heading.title"
     :description="heading.description"
   >
-    Hello
+    <div class="mb-6 flex flex-row">
+      <Chip
+        v-for="(t, idx) in topics"
+        :key="idx"
+        :text="t"
+        class="bg-secondary text-muted-foreground hover:text-foreground rounded-lg border border-white/10 px-4 py-2 transition-colors hover:border-white/20"
+      />
+    </div>
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <CardBlog
+        v-for="(b, idx) in blogs"
+        :key="idx"
+        :title="b.title"
+        :excerpt="b.meta.excerpt as Record<string, unknown>"
+        :topic="b.topic"
+        :date="b.date"
+        :reading-time="2"
+        :stem="b.stem"
+      />
+    </div>
   </Page>
 </template>
 
@@ -31,4 +50,18 @@
   const heading = computed<BlogIndexCollectionItem["heading"] | undefined>(
     () => page.value?.heading,
   );
+
+  const { data: rawTopics } = useAsyncData("blog-topics-list", () => {
+    return queryCollection("blog").select("topic").all();
+  });
+  const topics = computed<string[]>(
+    () => rawTopics.value?.flatMap((t) => t.topic) ?? [],
+  );
+
+  const { data: blogs } = useAsyncData("blogs-list", () => {
+    return queryCollection("blog")
+      .select("title", "description", "tags", "stem", "meta", "topic", "date")
+      .limit(5)
+      .all();
+  });
 </script>
