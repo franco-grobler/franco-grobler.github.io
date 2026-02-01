@@ -40,7 +40,7 @@
     () => page.value?.heading,
   );
 
-  const { data: projects } = useAsyncData("feature-projects", () => {
+  const { data: projects } = useAsyncData("projects-list", () => {
     return queryCollection("projects")
       .select("title", "description", "tags", "stem", "impact")
       .limit(5)
