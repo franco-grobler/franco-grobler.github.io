@@ -3,126 +3,126 @@ import type { ZodObject, ZodString } from "zod";
 import { z } from "zod";
 
 const SeoSchame = z.object({
-	title: z.string().nonempty(),
-	description: z.string().nonempty(),
+  title: z.string().nonempty(),
+  description: z.string().nonempty(),
 });
 
 const PageTitleSchema = z.object({
-	title: z.string().nonempty(),
-	description: z.string().nonempty(),
+  title: z.string().nonempty(),
+  description: z.string().nonempty(),
 });
 
 function generateSectionSchema(card: ZodString | ZodObject) {
-	return z.object({
-		title: z.string().nonempty(),
-		cards: z.array(card),
-	});
+  return z.object({
+    title: z.string().nonempty(),
+    cards: z.array(card),
+  });
 }
 
 function generateSectionSchemaWithRoute(card: ZodString | ZodObject) {
-	return generateSectionSchema(card).extend({
-		link: z.object({
-			label: z.string().nonempty(),
-			route: z.string().nonempty(),
-		}),
-	});
+  return generateSectionSchema(card).extend({
+    link: z.object({
+      label: z.string().nonempty(),
+      route: z.string().nonempty(),
+    }),
+  });
 }
 
 const ExternalLinkSchema = z.object({
-	icon: z.string().nonempty(),
-	label: z.string().nonempty(),
-	url: z.string().nonempty(),
+  icon: z.string().nonempty(),
+  label: z.string().nonempty(),
+  url: z.string().nonempty(),
 });
 
 export default defineContentConfig({
-	collections: {
-		index: defineCollection({
-			type: "data",
-			source: "index.yml",
-			schema: z.object({
-				seo: SeoSchame,
-				intro: PageTitleSchema.extend({
-					subtitle: z.string().nonempty(),
-					links: z.array(
-						z.object({
-							to: z.string().nonempty(),
-							label: z.string().nonempty(),
-							icon: z.string().optional(),
-							class: z.string().optional(),
-						}),
-					),
-				}),
-				skills: generateSectionSchema(
-					z.object({
-						title: z.string().nonempty(),
-						description: z.string().nonempty(),
-						icon: z.string().nonempty(),
-					}),
-				),
-				projects: generateSectionSchemaWithRoute(z.string().nonempty()),
-				research: generateSectionSchemaWithRoute(z.string().nonempty()),
-			}),
-		}),
-		blogIndex: defineCollection({
-			type: "data",
-			source: "blog.yml",
-			schema: z.object({
-				seo: SeoSchame,
-				heading: PageTitleSchema,
-			}),
-		}),
-		blog: defineCollection({
-			type: "page",
-			source: "blog/*.md",
-			schema: z.object({
-				title: z.string(),
-				description: z.string().optional(),
-				date: z.date(),
-				topic: z.string().nonempty(),
-				draft: z.boolean().default(false),
-				tags: z.array(z.string()).optional(),
-				image: z.object({
-					src: property(z.string()).editor({ input: "media" }),
-					alt: z.string(),
-				}),
-			}),
-		}),
-		projectsIndex: defineCollection({
-			type: "data",
-			source: "projects.yml",
-			schema: z.object({
-				seo: SeoSchame,
-				heading: PageTitleSchema,
-			}),
-		}),
-		projects: defineCollection({
-			type: "page",
-			source: "projects/*.md",
-			schema: z.object({
-				title: z.string(),
-				description: z.string().nonempty(),
-				tags: z.array(z.string().nonempty()),
-				impact: z.string().nonempty(),
-				links: z.array(ExternalLinkSchema),
-			}),
-		}),
-		researchIndex: defineCollection({
-			type: "data",
-			source: "research.yml",
-			schema: z.object({
-				seo: SeoSchame,
-				heading: PageTitleSchema,
-			}),
-		}),
-		research: defineCollection({
-			type: "page",
-			source: "research/*.md",
-			schema: z.object({
-				title: z.string(),
-				date: z.iso.date(),
-				"read-time": z.coerce.number(),
-				links: z.array(ExternalLinkSchema),
-			}),
-		}),
-	},
+  collections: {
+    index: defineCollection({
+      type: "data",
+      source: "index.yml",
+      schema: z.object({
+        seo: SeoSchame,
+        intro: PageTitleSchema.extend({
+          subtitle: z.string().nonempty(),
+          links: z.array(
+            z.object({
+              to: z.string().nonempty(),
+              label: z.string().nonempty(),
+              icon: z.string().optional(),
+              class: z.string().optional(),
+            }),
+          ),
+        }),
+        skills: generateSectionSchema(
+          z.object({
+            title: z.string().nonempty(),
+            description: z.string().nonempty(),
+            icon: z.string().nonempty(),
+          }),
+        ),
+        projects: generateSectionSchemaWithRoute(z.string().nonempty()),
+        research: generateSectionSchemaWithRoute(z.string().nonempty()),
+      }),
+    }),
+    blogIndex: defineCollection({
+      type: "data",
+      source: "blog.yml",
+      schema: z.object({
+        seo: SeoSchame,
+        heading: PageTitleSchema,
+      }),
+    }),
+    blog: defineCollection({
+      type: "page",
+      source: "blog/*.md",
+      schema: z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        date: z.date(),
+        topic: z.string().nonempty(),
+        draft: z.boolean().default(false),
+        tags: z.array(z.string()).optional(),
+        image: z.object({
+          src: property(z.string()).editor({ input: "media" }),
+          alt: z.string(),
+        }),
+      }),
+    }),
+    projectsIndex: defineCollection({
+      type: "data",
+      source: "projects.yml",
+      schema: z.object({
+        seo: SeoSchame,
+        heading: PageTitleSchema,
+      }),
+    }),
+    projects: defineCollection({
+      type: "page",
+      source: "projects/*.md",
+      schema: z.object({
+        title: z.string(),
+        description: z.string().nonempty(),
+        tags: z.array(z.string().nonempty()),
+        impact: z.string().nonempty(),
+        links: z.array(ExternalLinkSchema),
+      }),
+    }),
+    researchIndex: defineCollection({
+      type: "data",
+      source: "research.yml",
+      schema: z.object({
+        seo: SeoSchame,
+        heading: PageTitleSchema,
+      }),
+    }),
+    research: defineCollection({
+      type: "page",
+      source: "research/*.md",
+      schema: z.object({
+        "title": z.string(),
+        "date": z.iso.date(),
+        "read-time": z.coerce.number(),
+        "links": z.array(ExternalLinkSchema),
+      }),
+    }),
+  },
 });

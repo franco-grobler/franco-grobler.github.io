@@ -30,7 +30,7 @@ export default defineNuxtConfig({
   ],
 
   nitro: {
-    preset: "bun",
+    preset: process.env.NITRO_PRESET ?? "bun",
     prerender: {
       routes: ["/"],
       crawlLinks: true,
