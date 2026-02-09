@@ -1,13 +1,13 @@
 {
-	"$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
-	"packages": ["markdownlint-cli2@latest", "sqlite@latest", "bun@latest"],
-	"env": {
-		"TZ": "Africa/Johannesburg"
-	},
-	"shell": {
-		"init_hook": ["bun install"],
-		"scripts": {
-			"test": ["echo \"Error: no test specified\" && exit 1"]
-		}
-	}
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
+  "packages": ["markdownlint-cli2@latest", "sqlite@latest", "bun@latest"],
+  "env": {
+    "TZ": "Africa/Johannesburg"
+  },
+  "shell": {
+    "init_hook": ["bun install"],
+    "scripts": {
+      "test": ["echo \"Error: no test specified\" && exit 1"]
+    }
+  }
 }
