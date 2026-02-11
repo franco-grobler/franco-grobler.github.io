@@ -7,7 +7,6 @@
         :title="l.title"
         :icon="l.icon"
         :description="l.description"
-        class=""
       />
     </div>
   </LandingSection>

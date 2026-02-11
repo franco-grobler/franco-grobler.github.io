@@ -1,6 +1,6 @@
 <template>
-  <section class="border-t border-white/10 py-24">
-    <div class="mb-16">
+  <section class="border-t border-white/10 py-4 lg:py-24">
+    <div class="mb-4 lg:mb-16">
       <slot name="title">
         <div class="flex flex-row items-end justify-between align-baseline">
           <h2 class="text-3xl font-medium sm:text-4xl">{{ title }}</h2>
