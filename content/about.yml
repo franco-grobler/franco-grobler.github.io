@@ -1,0 +1,122 @@
+seo:
+  title: &title About Me
+  description: &description |
+    I'm a Senior Software Engineer and DevOps Engineer with a passion for building scalable, reliable systems. Currently completing a part-time Master's degree in Computer Science while working on production systems handling millions of requests daily. 
+
+    My work focuses on the intersection of software engineering and infrastructure—designing distributed systems, implementing CI/CD pipelines, and ensuring applications perform reliably at scale.
+
+page:
+  title: *title
+  description: *description
+
+  experience:
+    - title: Senior DevOps Engineer
+      company:
+        name: Lexis Nexis
+        url: https://lexisnexis.com
+      description: Part of the global shared service cloud engineering team,
+        tasked with developing a provider-agnostic pipeline interface as a
+        Python package. This library exposes a cli for CI/CD workflows,
+        abstracting the specifics of underlying CI providers such as Jenkins and
+        GitHub Actions.
+
+        I am also leveraging containerization within these pipelines to enable
+        support for a wider range of development frameworks, ensuring a flexible
+        and scalable CI/CD infrastructure.
+      tools: ["Python", "Jenkins", "Github Actions", "Terraform"]
+      timeline:
+        start: 2025-07-15
+        end: null
+
+    - title: Senior Software Engineer
+      company:
+        name: Byte Orbit
+        url: https://byteorbit.com
+      description: Starting as a junior developer in July 2022, I was promoted
+        to intermediate in September 2023, followed by a promotion to senior
+        developer and team lead in November 2024. Byte Orbit's primary focus is
+        within the Fintech industry, building API's with Django, Django REST
+        framework, and Postgres. Smaller projects and proof-of-concepts allowed
+        me to use Golang, NodeJS with ExpressJS (TypeScript), Vue3, and gain
+        experience with Angular.
+
+        My responsibilities include maintaining internal Python packages,
+        mentoring graduates and vacation work students, and working with various
+        product teams and other developers to deliver high-quality products
+        on-time.
+      tools:
+        [
+          "Python",
+          "GitLab CI",
+          "Django",
+          "FastAPI",
+          "Golang",
+          "TypeScript",
+          "Vue",
+          "Angular",
+          "Terraform",
+          "Rust",
+          "WebRTC",
+        ]
+      timeline:
+        start: 2022-07-04
+        end: 2025-07-15
+
+    - title: Inter
+      company:
+        name: Autonosky
+        url: https://autonosky.com
+      description:
+        Autonosky is a leading drone manufacturing company in South Africa. The
+        internship allowed me to stream a drone feed and perform computer vision
+        on the feed. The computer vision aimed to find fire in fields.
+      tools: ["Python", "YoloV5"]
+      timeline:
+        start: 2022-07-04
+        end: 2025-07-15
+
+  education:
+    - degree: Master of Science - Computer Science
+      description:
+        Research masters with a thesis titled 'Software architectures for modern
+        cloud environments'
+      institution: Stellenbosch University
+      timeline:
+        start: 2024-02-01
+        end: 2026-09-20
+    - degree: Bachelors of Engineering - Electric and Electronic
+      institution: Stellenbosch University
+      description: Informatics focused.
+      timeline:
+        start: 2024-02-01
+        end: 2026-09-20
+
+  skills:
+    Backend:
+      [
+        "Golang",
+        "Python",
+        "NodeJS",
+        "Bun",
+        "Django",
+        "FastAPI",
+        "Postgres",
+        "Redis",
+      ]
+    Frontend: ["TypeScript", "JavaScript", "React", "Vue", "Nuxt"]
+    DevOps: ["Terraform", "GitHub Actions", "Jenkins", "GitLab CI", "AWS"]
+    Inter-personal:
+      [
+        "Communication",
+        "Team work",
+        "Organisation",
+        "Conatainerisation",
+        "Linux",
+      ]
+
+  philosophy:
+    - Code can be beautiful.
+    - Performce matters.
+    - Code is built to solve problems.
+    - Cost of software is primarily incurred by its quality, and how it is
+      hosted.

@@ -36,6 +36,43 @@ const ExternalLinkSchema = z.object({
 
 export default defineContentConfig({
   collections: {
+    about: defineCollection({
+      type: "data",
+      source: "about.yml",
+      schema: z.object({
+        seo: SeoSchame,
+        page: PageTitleSchema.extend({
+          experience: z.array(
+            z.object({
+              title: z.string().nonoptional(),
+              company: z.object({
+                name: z.string().nonoptional(),
+                url: z.httpUrl(),
+              }),
+              description: z.string().nonoptional(),
+              tools: z.array(z.string()),
+              timeline: z.object({
+                start: z.date(),
+                end: z.date(),
+              }),
+            }),
+          ),
+          education: z.array(
+            z.object({
+              degree: z.string().nonoptional(),
+              description: z.string().nonoptional(),
+              institution: z.string().nonoptional(),
+              timeline: z.object({
+                start: z.date(),
+                end: z.date(),
+              }),
+            }),
+          ),
+          skills: z.record(z.string(), z.array(z.string())),
+          philosophy: z.array(z.string()),
+        }),
+      }),
+    }),
     index: defineCollection({
       type: "data",
       source: "index.yml",
