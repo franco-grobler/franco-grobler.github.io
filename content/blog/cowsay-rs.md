@@ -1,5 +1,5 @@
 ---
-title: cowsay-rs
+title: The Rusted Cow
 description: A rust rewrite of the classic cowsay ASCII art project.
 date: 2026-01-29
 topic: Software
