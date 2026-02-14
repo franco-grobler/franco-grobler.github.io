@@ -1,14 +1,22 @@
 <template>
   <UPage class="mt-20">
-    <h1 class="mb-6 text-4xl font-medium sm:text-5xl">
+    <h1
+      v-if="title"
+      class="mb-6 text-4xl font-medium sm:text-5xl"
+    >
       {{ title }}
     </h1>
 
-    <p class="text-muted-foreground max-w-3xl text-xl">
+    <p
+      v-if="description"
+      class="text-muted-foreground max-w-3xl text-xl"
+    >
       {{ description }}
     </p>
 
-    <div class="mt-16">
+    <slot name="header" />
+
+    <div class="mt-14">
       <slot />
     </div>
   </UPage>
@@ -16,7 +24,7 @@
 
 <script setup lang="ts">
   defineProps<{
-    title: string;
-    description: string;
+    title?: string;
+    description?: string;
   }>();
 </script>

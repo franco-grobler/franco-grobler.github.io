@@ -3,6 +3,7 @@
     <Chip
       v-for="(item, idx) in items"
       :key="idx"
+      :class="chipClass"
     >
       {{ item }}
     </Chip>
@@ -10,7 +11,10 @@
 </template>
 
 <script setup lang="ts">
-  const props = defineProps<{ items: string[] }>();
+  const props = defineProps<{
+    items: string[];
+    chipClass?: string;
+  }>();
 
   const items = computed<string[]>(() => props.items.toSorted());
 </script>

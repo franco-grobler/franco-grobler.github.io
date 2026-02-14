@@ -1,7 +1,7 @@
 <template>
   <Page
-    :title="page!.title"
-    description=""
+    v-if="page"
+    :title="page.title"
   >
     <ContentRenderer
       v-if="page"
@@ -28,4 +28,11 @@
       fatal: true,
     });
   }
+
+  useSeoMeta({
+    title: page.value.seo.title,
+    ogTitle: page.value.seo.title,
+    description: page.value.seo.description,
+    ogDescription: page.value.seo.description,
+  });
 </script>

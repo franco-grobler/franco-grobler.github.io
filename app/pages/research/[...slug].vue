@@ -1,8 +1,10 @@
 <template>
-  <ContentRenderer
-    v-if="page"
-    :value="page"
-  />
+  <Page>
+    <ContentRenderer
+      v-if="page"
+      :value="page"
+    />
+  </Page>
 </template>
 
 <script setup lang="ts">
@@ -23,4 +25,11 @@
       fatal: true,
     });
   }
+
+  useSeoMeta({
+    title: page.value.seo.title,
+    ogTitle: page.value.seo.title,
+    description: page.value.seo.description,
+    ogDescription: page.value.seo.description,
+  });
 </script>

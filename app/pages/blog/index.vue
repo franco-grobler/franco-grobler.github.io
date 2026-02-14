@@ -4,14 +4,12 @@
     :title="heading.title"
     :description="heading.description"
   >
-    <div class="mb-6 flex flex-row">
-      <Chip
-        v-for="(t, idx) in topics"
-        :key="idx"
-        :text="t"
-        class="bg-secondary text-muted-foreground hover:text-foreground rounded-lg border border-white/10 px-4 py-2 transition-colors hover:border-white/20"
-      />
-    </div>
+    <ContainerChips
+      class="mb-6"
+      :items="topics"
+      chip-class="bg-secondary text-muted-foreground hover:text-foreground rounded-lg border border-white/10 px-4 py-2 transition-colors hover:border-white/20"
+    />
+
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
       <CardBlog
         v-for="(b, idx) in blogs"
@@ -54,9 +52,9 @@
   const { data: rawTopics } = useAsyncData("blog-topics-list", () => {
     return queryCollection("blog").select("topic").all();
   });
-  const topics = computed<string[]>(
-    () => rawTopics.value?.flatMap((t) => t.topic) ?? [],
-  );
+  const topics = computed<string[]>(() => [
+    ...new Set(rawTopics.value?.flatMap((t) => t.topic).toSorted() ?? []),
+  ]);
 
   const { data: blogs } = useAsyncData("blogs-list", () => {
     return queryCollection("blog")

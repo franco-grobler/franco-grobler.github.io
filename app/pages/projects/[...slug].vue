@@ -1,8 +1,33 @@
 <template>
-  <ContentRenderer
+  <Page
     v-if="page"
-    :value="page"
-  />
+    :title="page.title"
+    :description="page.description"
+  >
+    <template #header>
+      <div class="mt-4">
+        <ContainerChips :items="page.tags" />
+
+        <div class="mt-6 flex flex-row gap-4">
+          <UButton
+            v-for="(l, idx) in page.links"
+            :key="idx"
+            :icon="l.icon"
+            :to="l.url"
+            variant="soft"
+            class="bg-secondary rounded-lg border border-white/10 px-3 py-2 text-sm transition-colors hover:border-white/20"
+          >
+            {{ l.label }}
+          </UButton>
+        </div>
+      </div>
+    </template>
+
+    <ContentRenderer
+      v-if="page"
+      :value="page"
+    />
+  </Page>
 </template>
 
 <script setup lang="ts">
@@ -23,4 +48,11 @@
       fatal: true,
     });
   }
+
+  useSeoMeta({
+    title: page.value.seo.title,
+    ogTitle: page.value.seo.title,
+    description: page.value.seo.description,
+    ogDescription: page.value.seo.description,
+  });
 </script>
