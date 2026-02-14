@@ -16,7 +16,7 @@ const MetaKey = "readTime";
  * @returns file content.
  */
 async function parseFile(path: string): Promise<string> {
-	return await file(path).text();
+  return await file(path).text();
 }
 
 /**
@@ -25,10 +25,10 @@ async function parseFile(path: string): Promise<string> {
  * @returns read time in minutes, rounded up to an integer.
  */
 function estimatedReadTime(content: string): number {
-	const wordsPerMinute = 200;
-	// Simple word count, stripping some markdown characters could be better but this is usually sufficient
-	const words = content.trim().split(/\s+/).length;
-	return Math.ceil(words / wordsPerMinute);
+  const wordsPerMinute = 200;
+  // Simple word count, stripping some markdown characters could be better but this is usually sufficient
+  const words = content.trim().split(/\s+/).length;
+  return Math.ceil(words / wordsPerMinute);
 }
 
 /**
@@ -38,38 +38,38 @@ function estimatedReadTime(content: string): number {
  * @returns the complete file content.
  */
 function updateReadTime(content: string, readTime: number): string {
-	const parts = content.split("---");
-	if (parts.length < 3) return content;
+  const parts = content.split("---");
+  if (parts.length < 3) return content;
 
-	const frontmatter = parts[1];
-	const lines = frontmatter.split("\n");
-	let found = false;
+  const frontmatter = parts[1];
+  const lines = frontmatter.split("\n");
+  let found = false;
 
-	const newLines = lines.flatMap((line) => {
-		if (line.includes(`${MetaKey}:`)) {
-			found = true;
-			const [prefix] = line.split(`${MetaKey}:`);
-			if (prefix.trim() === "") {
-				return [`${MetaKey}: ${readTime}`];
-			} else {
-				// Fix for previous bug where it might have been appended to the end of a line
-				return [prefix.trimEnd(), `${MetaKey}: ${readTime}`];
-			}
-		}
-		return [line];
-	});
+  const newLines = lines.flatMap((line) => {
+    if (line.includes(`${MetaKey}:`)) {
+      found = true;
+      const [prefix] = line.split(`${MetaKey}:`);
+      if (prefix.trim() === "") {
+        return [`${MetaKey}: ${readTime}`];
+      } else {
+        // Fix for previous bug where it might have been appended to the end of a line
+        return [prefix.trimEnd(), `${MetaKey}: ${readTime}`];
+      }
+    }
+    return [line];
+  });
 
-	if (!found) {
-		// Clean up trailing empty lines to ensure consistent placement
-		while (newLines.length > 0 && newLines[newLines.length - 1].trim() === "") {
-			newLines.pop();
-		}
-		newLines.push(`${MetaKey}: ${readTime}`);
-		newLines.push(""); // Ensure a trailing newline before the closing ---
-	}
+  if (!found) {
+    // Clean up trailing empty lines to ensure consistent placement
+    while (newLines.length > 0 && newLines[newLines.length - 1].trim() === "") {
+      newLines.pop();
+    }
+    newLines.push(`${MetaKey}: ${readTime}`);
+    newLines.push(""); // Ensure a trailing newline before the closing ---
+  }
 
-	parts[1] = newLines.join("\n");
-	return parts.join("---");
+  parts[1] = newLines.join("\n");
+  return parts.join("---");
 }
 
 /**
@@ -78,7 +78,7 @@ function updateReadTime(content: string, readTime: number): string {
  * @param path - Path to file to be written.
  */
 async function writeFile(content: string, path: string) {
-	await write(path, content);
+  await write(path, content);
 }
 
 /**
@@ -87,10 +87,10 @@ async function writeFile(content: string, path: string) {
  * @returns Text extracted, with meta-data excluded.
  */
 function extractContent(fileContent: string): string {
-	const parts = fileContent.split("---");
-	if (parts.length < 3) return fileContent;
-	// Return everything after the second ---
-	return parts.slice(2).join("---").trim();
+  const parts = fileContent.split("---");
+  if (parts.length < 3) return fileContent;
+  // Return everything after the second ---
+  return parts.slice(2).join("---").trim();
 }
 
 /**
@@ -98,31 +98,31 @@ function extractContent(fileContent: string): string {
  * @param filePath - Path to the file.
  */
 async function processFile(filePath: string) {
-	const content = await parseFile(filePath);
-	const body = extractContent(content);
-	const readTime = estimatedReadTime(body);
-	const updatedContent = updateReadTime(content, readTime);
+  const content = await parseFile(filePath);
+  const body = extractContent(content);
+  const readTime = estimatedReadTime(body);
+  const updatedContent = updateReadTime(content, readTime);
 
-	if (content !== updatedContent) {
-		await writeFile(updatedContent, filePath);
-		console.log(`Updated ${filePath}: ${readTime} min`);
-	} else {
-		console.log(`Skipped ${filePath} (already up to date)`);
-	}
+  if (content !== updatedContent) {
+    await writeFile(updatedContent, filePath);
+    console.log(`Updated ${filePath}: ${readTime} min`);
+  } else {
+    console.log(`Skipped ${filePath} (already up to date)`);
+  }
 }
 
 /**
  * Main execution function.
  */
 async function run() {
-	const promises: Promise<void>[] = [];
-	for (const dir of ContentDirs) {
-		const glob = new Glob(`${dir}/**/*.md`);
-		for await (const file of glob.scan(".")) {
-			promises.push(processFile(file));
-		}
-	}
-	await Promise.all(promises);
+  const promises: Promise<void>[] = [];
+  for (const dir of ContentDirs) {
+    const glob = new Glob(`${dir}/**/*.md`);
+    for await (const file of glob.scan(".")) {
+      promises.push(processFile(file));
+    }
+  }
+  await Promise.all(promises);
 }
 
 run().catch(console.error);
