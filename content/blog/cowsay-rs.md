@@ -4,6 +4,7 @@ description: A rust rewrite of the classic cowsay ASCII art project.
 date: 2026-01-29
 topic: Software
 tags: ["Rust", "CLI", "Open Source"]
+read-time: 1
 ---
 
 Computer scientists and engineers are not well known for their sense of humor,

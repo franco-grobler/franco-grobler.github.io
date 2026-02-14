@@ -4,6 +4,7 @@ description: I didn't want to pay AWS to run tests for my master's thesis.
 date: 2026-01-31
 topic: Homelab
 tags: ["Proxmox", "Virtual Machines", "Kubernetes", "ArgoCD"]
+read-time: 1
 ---
 
 Every aspiring DevOps engineer eventually realises that cloud hosting is

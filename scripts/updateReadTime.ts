@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 /**
  * @module Update read time markdown meta data.
  *
