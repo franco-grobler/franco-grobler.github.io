@@ -8,9 +8,15 @@
     >
       <template #header>
         <div class="flex flex-col">
-          <div class="mb-4">
+          <div class="mb-4 flex flex-row justify-between">
             <span class="text-accent text-sm">
               {{ topic }}
+            </span>
+            <span
+              v-if="draft"
+              class="top-4 right-4 rounded border border-amber-500/50 px-2 py-1 text-[10px] font-bold tracking-widest text-amber-500 uppercase"
+            >
+              Draft
             </span>
           </div>
           <h2
@@ -55,6 +61,7 @@
     date: string;
     readingTime: number;
     stem: string;
+    draft?: boolean;
   }
 
   defineProps<CardBlogProps>();
