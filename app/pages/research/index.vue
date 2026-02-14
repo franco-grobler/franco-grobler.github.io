@@ -16,10 +16,11 @@
         :key="idx"
         :title="r.title"
         :excerpt="r.meta.excerpt as Record<string, unknown>"
-        :topic="r['paper-type']"
+        :topic="r.paperType"
         :date="r.date"
-        :reading-time="r['read-time']"
+        :reading-time="r.readTime"
         :stem="r.stem"
+        :draft="r.draft"
       />
     </div>
   </Page>
@@ -50,25 +51,15 @@
   );
 
   const { data: rawTopics } = useAsyncData("research-types-list", () => {
-    return queryCollection("research").select("paper-type").all();
+    return queryCollection("research").select("paperType").all();
   });
   const types = computed<string[]>(() => [
-    ...new Set(
-      rawTopics.value?.flatMap((t) => t["paper-type"]).toSorted() ?? [],
-    ),
+    ...new Set(rawTopics.value?.flatMap((t) => t.paperType).toSorted() ?? []),
   ]);
 
   const { data: research } = useAsyncData("research-list", () => {
     return queryCollection("research")
-      .select(
-        "title",
-        "paper-type",
-        "date",
-        "read-time",
-        "draft",
-        "stem",
-        "meta",
-      )
+      .select("title", "paperType", "date", "readTime", "draft", "stem", "meta")
       .all();
   });
 </script>

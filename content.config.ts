@@ -115,6 +115,7 @@ export default defineContentConfig({
 				title: z.string(),
 				description: z.string().optional(),
 				date: z.date(),
+				readTime: z.coerce.number(),
 				topic: z.string().nonempty(),
 				draft: z.boolean().default(false),
 				tags: z.array(z.string()).optional(),
@@ -138,6 +139,7 @@ export default defineContentConfig({
 			schema: z.object({
 				title: z.string(),
 				description: z.string().nonempty(),
+				readTime: z.coerce.number(),
 				tags: z.array(z.string().nonempty()),
 				impact: z.string().nonempty(),
 				links: z.array(ExternalLinkSchema),
@@ -156,9 +158,9 @@ export default defineContentConfig({
 			source: "research/*.md",
 			schema: z.object({
 				title: z.string(),
-				"paper-type": z.string().nonoptional(),
+				paperType: z.string().nonoptional(),
 				date: z.iso.date(),
-				"read-time": z.coerce.number(),
+				readTime: z.coerce.number(),
 				draft: z.boolean().default(false),
 				links: z.array(ExternalLinkSchema),
 			}),

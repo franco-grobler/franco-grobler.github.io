@@ -1,8 +1,8 @@
 ---
 title: Modern Dinosaurs
-paper-type: Research article
+paperType: Research article
 date: 2026-01-29
-read-time: 1
+readTime: 1
 draft: true
 links:
   - icon: "i-simple-icons-github"

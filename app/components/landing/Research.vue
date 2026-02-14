@@ -9,7 +9,7 @@
         :key="idx"
         :title="f.title"
         :date="f.date"
-        :read-time="f['read-time']"
+        :read-time="f.readTime"
         :description="f.description"
         :slug="f.stem.split('/')[1] as string"
       />

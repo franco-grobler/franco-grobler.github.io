@@ -4,7 +4,7 @@ description: Keeping copies of code everywhere.
 date: 2026-01-29
 topic: Software
 tags: ["GitLab", "GitHub", "Version control", "CI/CD"]
-read-time: 2
+readTime: 2
 ---
 
 Back-ups are important, we all know this. Yet, when it comes to version control,
