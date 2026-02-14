@@ -12,12 +12,10 @@
             <span class="text-accent text-sm">
               {{ topic }}
             </span>
-            <span
+            <BadgeDraft
               v-if="draft"
-              class="top-4 right-4 rounded border border-amber-500/50 px-2 py-1 text-[10px] font-bold tracking-widest text-amber-500 uppercase"
-            >
-              Draft
-            </span>
+              class="text-xs"
+            />
           </div>
           <h2
             class="group-hover:text-accent mb-3 text-2xl font-medium transition-colors"

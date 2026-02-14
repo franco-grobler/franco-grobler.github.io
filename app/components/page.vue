@@ -1,11 +1,13 @@
 <template>
   <UPage class="mt-20">
-    <h1
-      v-if="title"
-      class="mb-6 text-4xl font-medium sm:text-5xl"
-    >
-      {{ title }}
-    </h1>
+    <slot name="title">
+      <h1
+        v-if="title"
+        class="mb-6 text-4xl font-medium sm:text-5xl"
+      >
+        {{ title }}
+      </h1>
+    </slot>
 
     <p
       v-if="description"

@@ -18,7 +18,7 @@
         :excerpt="b.meta.excerpt as Record<string, unknown>"
         :topic="b.topic"
         :date="b.date"
-        :reading-time="2"
+        :reading-time="b.readTime"
         :stem="b.stem"
       />
     </div>
@@ -58,7 +58,16 @@
 
   const { data: blogs } = useAsyncData("blogs-list", () => {
     return queryCollection("blog")
-      .select("title", "description", "tags", "stem", "meta", "topic", "date")
+      .select(
+        "title",
+        "description",
+        "tags",
+        "stem",
+        "readTime",
+        "meta",
+        "topic",
+        "date",
+      )
       .limit(5)
       .all();
   });
