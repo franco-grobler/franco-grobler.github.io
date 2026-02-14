@@ -46,7 +46,10 @@
     useAsyncData(
       "navigation",
       () => {
-        return Promise.all([queryCollectionNavigation("blog")]);
+        return Promise.all([
+          queryCollectionNavigation("blog"),
+          queryCollectionNavigation("research"),
+        ]);
       },
       {
         transform: (data) => data.flat(),
@@ -55,7 +58,10 @@
     useLazyAsyncData(
       "search",
       () => {
-        return Promise.all([queryCollectionSearchSections("blog")]);
+        return Promise.all([
+          queryCollectionSearchSections("blog"),
+          queryCollectionNavigation("research"),
+        ]);
       },
       {
         server: false,
