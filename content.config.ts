@@ -69,8 +69,14 @@ export default defineContentConfig({
 						}),
 					),
 					skills: z.record(z.string(), z.array(z.string())),
-					philosophy: z.array(z.string()),
 				}),
+			}),
+		}),
+		aboutContent: defineCollection({
+			type: "data",
+			source: "about/*.md",
+			schema: z.object({
+				title: z.string().nonoptional(),
 			}),
 		}),
 		index: defineCollection({

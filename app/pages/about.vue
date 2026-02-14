@@ -52,17 +52,12 @@
       </div>
     </section>
 
-    <section>
-      <h2>Engineering Philosophy</h2>
-      <UCard>
-        <p
-          v-for="(p, idx) in about.philosophy"
-          :key="idx"
-          class="text-muted-foreground leading-relaxed"
-        >
-          {{ p }}
-        </p>
-      </UCard>
+    <section v-if="philosophy">
+      <h2>{{ philosophy.title }}</h2>
+      <ContentRenderer
+        class="text-muted-foreground"
+        :value="philosophyBody"
+      />
     </section>
   </Page>
 </template>
@@ -81,6 +76,7 @@
       fatal: true,
     });
   }
+
   useSeoMeta({
     title: page.value.seo.title,
     ogTitle: page.value.seo.title,
@@ -90,6 +86,15 @@
 
   const about = computed<AboutCollectionItem["page"] | undefined>(
     () => page.value?.page,
+  );
+
+  const { data: philosophy } = await useAsyncData("about-philoshpy", () => {
+    return queryCollection("aboutContent").first();
+  });
+  const philosophyBody = computed(
+    () =>
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      philosophy.value?.meta.body as Record<string, any>,
   );
 
   function toTimeline(
@@ -114,6 +119,10 @@
   h2 {
     @apply mb-4 text-2xl font-medium;
   }
+  h4 {
+    @apply font-medium;
+  }
+
   section {
     @apply mb-8;
   }

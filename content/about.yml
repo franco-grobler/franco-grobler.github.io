@@ -113,10 +113,3 @@ page:
         "Conatainerisation",
         "Linux",
       ]
-
-  philosophy:
-    - Code can be beautiful.
-    - Performce matters.
-    - Code is built to solve problems.
-    - Cost of software is primarily incurred by its quality, and how it is
-      hosted.

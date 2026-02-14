@@ -7,8 +7,8 @@
 
 import { Glob, file, write } from "bun";
 
-const ContentDirs = ["content/blog", "content/research"];
-const MetaKey = "read-time";
+const ContentDirs = ["content/blog", "content/projects", "content/research"];
+const MetaKey = "readTime";
 
 /**
  * Read the file specified, and return the content.
