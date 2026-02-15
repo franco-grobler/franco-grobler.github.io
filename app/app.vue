@@ -60,7 +60,7 @@
       () => {
         return Promise.all([
           queryCollectionSearchSections("blog"),
-          queryCollectionNavigation("research"),
+          queryCollectionSearchSections("research"),
         ]);
       },
       {
