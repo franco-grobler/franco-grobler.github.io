@@ -2,6 +2,7 @@
   <div
     class="bg-background/80 fixed top-0 right-0 left-0 z-50 border-b border-white/10 backdrop-blur-xl"
   >
+    <div class="sticky bg-red-600 text-center">UNDER DEVELOPMENT</div>
     <div
       class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-12"
     >
@@ -15,6 +16,7 @@
       <UNavigationMenu
         :items="links"
         color="neutral"
+        exact
         highlight
         highlight-color="accent"
         variant="link"
