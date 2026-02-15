@@ -2,7 +2,7 @@
   <ClientOnly>
     <UButton
       :aria-label="`Switch to ${nextTheme} mode`"
-      :icon="`i-lucide-${nextTheme === 'dark' ? 'sun' : 'moon'}`"
+      :icon="modeIcons[nextTheme]"
       color="neutral"
       variant="ghost"
       size="sm"
@@ -18,8 +18,19 @@
 <script setup lang="ts">
   const colorMode = useColorMode();
 
-  const nextTheme = computed(() =>
-    colorMode.value === "dark" ? "light" : "dark",
+  const colorModes = ["system", "dark", "light"] as const;
+  type ColorModes = (typeof colorModes)[number];
+  const modeIcons: Record<ColorModes, string> = {
+    dark: "i-lucide-moon",
+    light: "i-lucide-sun",
+    system: "i-lucide-monitor",
+  } as const;
+
+  const nextTheme = computed<ColorModes>(
+    () =>
+      colorModes[
+        (1 + (colorModes.findIndex((v) => v === colorMode.preference) ?? 0)) % 3
+      ]!,
   );
 
   function switchTheme() {
@@ -27,7 +38,7 @@
   }
 
   function startViewTransition(event: MouseEvent) {
-    if (!document.startViewTransition) {
+    if (!document.startViewTransition || colorMode.value == nextTheme.value) {
       switchTheme();
       return;
     }
