@@ -12,7 +12,10 @@
         <UButton
           v-for="(link, index) of footer?.links"
           :key="index"
-          v-bind="{ size: 'xs', color: 'neutral', variant: 'ghost', ...link }"
+          v-bind="link"
+          color="neutral"
+          size="md"
+          variant="ghost"
         />
       </template>
     </template>
