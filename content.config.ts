@@ -131,6 +131,21 @@ export default defineContentConfig({
         }),
       }),
     }),
+    contact: defineCollection({
+      type: "data",
+      source: "contact.yml",
+      schema: z.object({
+        seo: SeoSchame,
+        heading: PageTitleSchema,
+        information: z.object({
+          title: z.string().nonoptional(),
+          links: z.array(
+            property(z.object({})).inherit("app/components/card/Contact.vue"),
+          ),
+          responseTime: z.string().nonoptional(),
+        }),
+      }),
+    }),
     projectsIndex: defineCollection({
       type: "data",
       source: "projects.yml",
