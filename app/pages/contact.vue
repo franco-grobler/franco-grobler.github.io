@@ -10,12 +10,13 @@
         :title="info.title"
       >
         <div class="flex flex-col gap-4">
-          <CardContact
-            v-if="info.links"
-            v-for="(l, idx) in info.links"
-            :key="idx"
-            v-bind="l"
-          />
+          <template v-if="info.links">
+            <CardContact
+              v-for="(l, idx) in info.links"
+              :key="idx"
+              v-bind="l"
+            />
+          </template>
 
           <div class="bg-secondary rounded-xl border border-white/10 p-6">
             <h3 class="mb-3">Response Time</h3>
