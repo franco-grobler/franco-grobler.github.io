@@ -10,7 +10,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "test": "NODE_OPTIONS='--no-webstorage' vitest",
-    "lint": "eslint --fix app/",
+    "lint": "eslint --fix .",
     "format": "prettier --write .",
     "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage",

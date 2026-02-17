@@ -52,7 +52,7 @@ describe("Contact form", () => {
       .setValue("Hello!");
 
     // Submit the form by calling the exposed onSubmit
-    await (component.vm as any).onSubmit({
+    await component.vm.onSubmit({
       data: {
         name: "John Doe",
         email: "john@example.com",

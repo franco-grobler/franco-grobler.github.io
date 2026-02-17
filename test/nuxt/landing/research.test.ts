@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import { ref } from "vue";
 import { mountSuspended, mockNuxtImport } from "@nuxt/test-utils/runtime";
 import Research from "~/components/landing/Research.vue";
