@@ -9,7 +9,7 @@ export default defineConfig<ConfigOptions>({
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: "html",
-  timeout: 60_000 * (process.env.CI ? 3 : 1),
+  timeout: 60_000 * ((process.env.CI ?? true) ? 3 : 1),
   use: {
     trace: "on-first-retry",
     nuxt: {
