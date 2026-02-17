@@ -11,8 +11,8 @@ export default defineAppConfig({
     available: true,
     staticForms: {
       url: "https://api.staticforms.dev/submit",
-      key: process.env.STATICFORM_KEY,
-      captcha: process.env.RECAPTCHA_SITE_KEY,
+      key: process.env.STATICFORM_KEY!,
+      captcha: process.env.RECAPTCHA_SITE_KEY!,
     },
   },
   ui: {
