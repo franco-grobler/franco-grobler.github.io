@@ -30,7 +30,7 @@ export default defineNuxtConfig({
   ],
 
   nitro: {
-    preset: "github_pages",
+    preset: import.meta.env.NITRO_PRESET ?? "github_pages",
     prerender: {
       routes: ["/"],
       crawlLinks: true,
