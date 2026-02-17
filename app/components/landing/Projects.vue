@@ -10,7 +10,7 @@
         :title="f.title"
         :description="f.description"
         :tags="f.tags"
-        :slug="f.stem.split('/')[1] ?? ''"
+        :slug="f.stem?.split('/')[1] ?? ''"
       />
     </div>
   </LandingSection>

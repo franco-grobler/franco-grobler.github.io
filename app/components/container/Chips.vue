@@ -17,5 +17,5 @@
   }>();
   const { items } = toRefs(props);
 
-  const sortedItems = computed<string[]>(() => items.value.toSorted());
+  const sortedItems = computed<string[]>(() => items.value?.toSorted());
 </script>
