@@ -5,6 +5,7 @@ import Skills from "~/components/landing/Skills.vue";
 describe("Landing Skills", () => {
   it("renders skills cards", async () => {
     const skills = {
+      title: "Mock skills",
       cards: [
         {
           title: "Frontend",

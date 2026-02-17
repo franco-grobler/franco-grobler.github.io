@@ -51,7 +51,7 @@ describe("Contact form", () => {
       .find('textarea[placeholder="What are we talking about?"]')
       .setValue("Hello!");
 
-    // Submit the form by calling the exposed onSubmit
+    // @ts-expect-error: vm type is partially defined
     await component.vm.onSubmit({
       data: {
         name: "John Doe",

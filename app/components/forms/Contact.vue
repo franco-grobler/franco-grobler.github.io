@@ -92,6 +92,7 @@
   const toast = useToast();
 
   function resetState() {
+    // @ts-expect-error: Entries are untyped when literal
     Object.entries(NullState).forEach(([key, value]) => (state[key] = value));
     loading.value = false;
   }
