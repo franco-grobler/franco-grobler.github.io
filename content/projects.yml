@@ -1,0 +1,9 @@
+seo:
+  title: &title Projects
+  description:
+    &description A selection of technical projects demonstrating expertise in
+    distributed systems, cloud infrastructure, and full-stack development.
+
+heading:
+  title: *title
+  description: *description
