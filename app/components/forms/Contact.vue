@@ -80,9 +80,9 @@
   const formFields = Object.entries(fieldProps) as [SchemaKeys, FieldProps][];
 
   const NullState: Schema = {
-    name: "hello",
-    email: "hello@hello.com",
-    message: "hello",
+    name: "",
+    email: "",
+    message: "",
   } as const;
 
   const state = reactive<Schema>(NullState);
