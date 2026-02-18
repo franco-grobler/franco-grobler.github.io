@@ -1,0 +1,25 @@
+seo:
+  title: &title Get in Touch
+  description:
+    &description Interested in collaboration, have a technical question, or want
+    to discuss a project? I'd love to hear from you.
+
+heading:
+  title: *title
+  description: *description
+
+information:
+  title: Contact Information
+  links:
+    - icon: "lucide:mail"
+      label: Email
+      email: true
+    - icon: "lucide:linkedin"
+      label: LinkedIn
+      link: "https://www.linkedin.com/in/franco-grobler-4b26a3156/"
+    - icon: "lucide:github"
+      label: GitHub
+      link: "https://github.com/franco-grobler"
+  responseTime:
+    I typically respond within 24-48 hours. For urgent matters, please indicate
+    that in your message subject line.

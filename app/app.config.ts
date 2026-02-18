@@ -7,8 +7,13 @@ export default defineAppConfig({
       alt: "Profile picture",
     },
     meetingLink: "https://cal.com/",
-    email: "franco@grobler.fyi",
+    email: process.env.CONTACT_EMAIL,
     available: true,
+    staticForms: {
+      url: "https://api.staticforms.dev/submit",
+      key: process.env.STATICFORM_KEY!,
+      captcha: process.env.RECAPTCHA_SITE_KEY!,
+    },
   },
   ui: {
     container: {
@@ -32,6 +37,16 @@ export default defineAppConfig({
         variant: "solid",
       },
     },
+    input: {
+      slots: {
+        root: "w-full relative inline-flex items-center",
+      },
+    },
+    textarea: {
+      slots: {
+        root: "w-full",
+      },
+    },
   },
   header: {
     home: {
@@ -40,20 +55,26 @@ export default defineAppConfig({
     },
   },
   footer: {
-    credits: `Built with Nuxt • © ${new Date().getFullYear()}`,
+    credits: `All rights reserved • Franco Grobler • © ${new Date().getFullYear()}`,
     colorMode: false,
     links: [
       {
-        "icon": "i-simple-icons-linkedin",
+        "icon": "lucide:github",
+        "to": "https://github.com/franco-grobler",
+        "target": "_blank",
+        "aria-label": "GitHub",
+      },
+      {
+        "icon": "lucide:linkedin",
         "to": "https://www.linkedin.com/in/franco-grobler-4b26a3156/",
         "target": "_blank",
         "aria-label": "LinkedIn",
       },
       {
-        "icon": "i-simple-icons-github",
-        "to": "https://github.com/franco-grobler",
+        "icon": "lucide:mail",
         "target": "_blank",
-        "aria-label": "Nuxt UI on GitHub",
+        "aria-label": "LinkedIn",
+        "email": true,
       },
     ],
   },

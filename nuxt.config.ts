@@ -30,10 +30,24 @@ export default defineNuxtConfig({
   ],
 
   nitro: {
-    preset: process.env.NITRO_PRESET ?? "bun",
+    preset: import.meta.env.NITRO_PRESET ?? "github_pages",
     prerender: {
       routes: ["/"],
       crawlLinks: true,
+    },
+  },
+
+  runtimeConfig: {
+    public: {
+      recaptcha: {
+        v3SiteKey: "YOUR_V3_SITEKEY_HERE",
+      },
+    },
+  },
+
+  typescript: {
+    tsConfig: {
+      include: ["test/unit/**/*"],
     },
   },
 

@@ -1,7 +1,7 @@
 <template>
   <div class="flex w-full flex-row flex-wrap gap-2">
     <Chip
-      v-for="(item, idx) in items"
+      v-for="(item, idx) in sortedItems"
       :key="idx"
       :class="chipClass"
     >
@@ -15,6 +15,7 @@
     items: string[];
     chipClass?: string;
   }>();
+  const { items } = toRefs(props);
 
-  const items = computed<string[]>(() => props.items.toSorted());
+  const sortedItems = computed<string[]>(() => items.value?.toSorted());
 </script>

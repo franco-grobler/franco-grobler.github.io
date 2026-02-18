@@ -3,7 +3,10 @@
     :title="research.title"
     :link="research.link"
   >
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+    <div
+      v-if="featured"
+      class="grid grid-cols-1 gap-8 md:grid-cols-2"
+    >
       <CardResearch
         v-for="(f, idx) in featured"
         :key="idx"

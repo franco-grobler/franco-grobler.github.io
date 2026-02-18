@@ -117,7 +117,7 @@
   @reference "~/assets/css/main.css";
 
   h2 {
-    @apply mb-4 text-2xl font-medium;
+    @apply mb-4;
   }
   h4 {
     @apply font-medium;
