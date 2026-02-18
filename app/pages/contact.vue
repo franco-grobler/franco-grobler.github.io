@@ -11,11 +11,18 @@
       >
         <div class="flex flex-col gap-4">
           <template v-if="info.links">
-            <CardContact
+            <template
               v-for="(l, idx) in info.links"
               :key="idx"
-              v-bind="l"
-            />
+            >
+              <ClientOnly v-if="l.email">
+                <CardContact v-bind="l" />
+              </ClientOnly>
+              <CardContact
+                v-else
+                v-bind="l"
+              />
+            </template>
           </template>
 
           <div class="bg-secondary rounded-xl border border-white/10 p-6">
