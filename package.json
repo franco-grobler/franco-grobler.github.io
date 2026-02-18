@@ -33,7 +33,7 @@
     "vue-router": "^5.0.2"
   },
   "devDependencies": {
-    "@iconify-json/lucide": "^1.2.90",
+    "@iconify-json/lucide": "^1.2.91",
     "@iconify-json/material-symbols": "^1.2.55",
     "@iconify-json/simple-icons": "^1.2.71",
     "@tiptap/extension-drag-handle": "^3.19.0",
