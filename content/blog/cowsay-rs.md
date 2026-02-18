@@ -26,10 +26,10 @@ way I did the same.
 
 ## Why Rust?
 
-I had only used rust once previously; to write a encrypted message exchange
+I had only used rust once previously; to write an encrypted message exchange
 between a website and a payment server for a banking application. Rust has
 become increasingly popular, thus I surrendered to FOMO.
 
 Rust is of course known for achieving close to C speeds, without needing to
-thing too much about memory management and overflows, since the rust compiler is
+think too much about memory management and overflows, since the rust compiler is
 the mentor we all wish we had.

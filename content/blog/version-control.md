@@ -31,7 +31,7 @@ off-site backup.
 ### Mirrors
 
 Keeping a duplicate of a repository on two different providers seems like a
-hassle, but it actually isn't took difficult. Many well-known open-source
+hassle, but it actually isn't too difficult. Many well-known open-source
 projects are older than GitHub, and still use the original git server they were
 using before the rise of GitHub. Some examples include ...
 

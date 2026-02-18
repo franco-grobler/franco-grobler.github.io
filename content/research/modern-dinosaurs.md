@@ -12,7 +12,7 @@ links:
 
 You are not Google.
 
-Most architects forget what modern computers or capable of, or who they work
+Most architects forget what modern computers are capable of, or who they work
 for. Small scale applications will future proof with event driven asynchronous
 architectures running on highly available Kubernetes clusters in three
 availability zones, and disaster recovery ready on every continent.

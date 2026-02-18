@@ -12,17 +12,17 @@ amazing, but when it is not coming out of your own pocket. Thus, homelabs are
 born.
 
 My journey started because I thought AWS charge way too much for a Kubernetes
-cluster. From some basic, back of the napkin calculations,I would have paid more
-to host the infrastructure used in my master's research, than for I would pay
-for my actual masters. Therefor, I did the responsible thing and spent **less**
-money to build a homelab.
+cluster. From some basic, back of the napkin calculations, I would have paid
+more to host the infrastructure used in my master's research, than for I would
+pay for my actual masters. Therefor, I did the responsible thing and spent
+**less** money to build a homelab.
 
 <!-- more -->
 
 ## The plan
 
-I needed to run a kubernetes cluster, and because this is not at all a
-production cluster, it had to highly available. Sarcasm aside, I wanted the
+I needed to run a Kubernetes cluster, and because this is not at all a
+production cluster, it had to be highly available. Sarcasm aside, I wanted the
 setup to at least resemble something that would be available in a cloud
 environment.
 

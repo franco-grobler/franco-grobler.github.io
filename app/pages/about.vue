@@ -88,7 +88,7 @@
     () => page.value?.page,
   );
 
-  const { data: philosophy } = await useAsyncData("about-philoshpy", () => {
+  const { data: philosophy } = await useAsyncData("about-philosophy", () => {
     return queryCollection("aboutContent").first();
   });
   const philosophyBody = computed(
