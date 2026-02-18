@@ -5,6 +5,7 @@ Built with [Nuxt](https://nuxt.com/).
 ## TODO
 
 - [ ] Mobile optimisations
+  - [x] Mobile menu
 - [ ] Email in contact page
 - [ ] Email in quick links in footer
 
