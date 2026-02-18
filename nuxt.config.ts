@@ -16,6 +16,22 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
+  icon: {
+    clientBundle: {
+      icons: [
+        "lucide:arrow-right",
+        "lucide:clock",
+        "lucide:cloud",
+        "lucide:hash",
+        "lucide:moon",
+        "lucide:monitor",
+        "lucide:server",
+        "lucide:sun",
+        "material-symbols:arrow-right-alt",
+      ],
+    },
+  },
+
   imports: {
     autoImport: true,
   },
