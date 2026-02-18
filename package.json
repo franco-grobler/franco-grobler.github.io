@@ -35,7 +35,7 @@
   "devDependencies": {
     "@iconify-json/lucide": "^1.2.90",
     "@iconify-json/material-symbols": "^1.2.55",
-    "@iconify-json/simple-icons": "^1.2.70",
+    "@iconify-json/simple-icons": "^1.2.71",
     "@tiptap/extension-drag-handle": "^3.19.0",
     "@vitest/coverage-v8": "^4.0.16",
     "@vitest/ui": "4.0.18",
