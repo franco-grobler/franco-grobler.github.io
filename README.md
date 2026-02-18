@@ -2,6 +2,12 @@
 
 Built with [Nuxt](https://nuxt.com/).
 
+## TODO
+
+- [ ] Mobile optimisations
+- [ ] Email in contact page
+- [ ] Email in quick links in footer
+
 ## Setup
 
 Make sure to install dependencies:
