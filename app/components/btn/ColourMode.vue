@@ -8,7 +8,12 @@
       size="sm"
       class="rounded-full"
       @click="startViewTransition"
-    />
+    >
+      <span v-if="withLabel">
+        Use {{ nextTheme }}
+        {{ nextTheme === "system" ? "theme" : "mode" }}</span
+      >
+    </UButton>
     <template #fallback>
       <div class="size-4" />
     </template>
@@ -16,6 +21,7 @@
 </template>
 
 <script setup lang="ts">
+  defineProps<{ withLabel?: boolean }>();
   const colorMode = useColorMode();
 
   const colorModes = ["system", "dark", "light"] as const;
