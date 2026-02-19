@@ -15,6 +15,7 @@
 
       <UNavigationMenu
         :items="links"
+        class="hidden sm:flex"
         color="neutral"
         exact
         highlight
@@ -28,18 +29,54 @@
           <BtnColourMode />
         </template>
       </UNavigationMenu>
+
+      <div class="flex flex-row gap-4 sm:hidden">
+        <UDropdownMenu
+          :items="mobileLinks"
+          :ui="{
+            content: 'w-48',
+          }"
+        >
+          <UButton
+            icon="i-lucide-menu"
+            color="neutral"
+            variant="ghost"
+            aria-label="Open navigation menu"
+          />
+
+          <template #content-bottom>
+            <div class="flex flex-col gap-1">
+              <USeparator />
+              <div class="p-1.5">
+                <BtnColourMode with-label />
+              </div>
+            </div>
+          </template>
+        </UDropdownMenu>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-  import type { NavigationMenuItem } from "@nuxt/ui";
+  import type { NavigationMenuItem, DropdownMenuItem } from "@nuxt/ui";
 
   import { useAppConfig } from "#app";
 
-  defineProps<{
+  const props = defineProps<{
     links: NavigationMenuItem[];
   }>();
+  const links = toRef(props.links);
 
   const { header } = useAppConfig();
+
+  const mobileLinks = computed(() =>
+    links.value.map<DropdownMenuItem>((l) => {
+      return {
+        type: "link",
+        icon: l.icon,
+        label: l.label,
+      };
+    }),
+  );
 </script>

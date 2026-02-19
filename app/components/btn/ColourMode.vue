@@ -1,14 +1,18 @@
 <template>
   <ClientOnly>
     <UButton
-      :aria-label="`Switch to ${nextTheme} mode`"
+      :aria-label="label"
       :icon="modeIcons[nextTheme]"
       color="neutral"
       variant="ghost"
       size="sm"
       class="rounded-full"
       @click="startViewTransition"
-    />
+    >
+      <span v-if="withLabel">
+        {{ label }}
+      </span>
+    </UButton>
     <template #fallback>
       <div class="size-4" />
     </template>
@@ -16,6 +20,7 @@
 </template>
 
 <script setup lang="ts">
+  defineProps<{ withLabel?: boolean }>();
   const colorMode = useColorMode();
 
   const colorModes = ["system", "dark", "light"] as const;
@@ -31,6 +36,10 @@
       colorModes[
         (1 + (colorModes.findIndex((v) => v === colorMode.preference) ?? 0)) % 3
       ]!,
+  );
+  const label = computed(
+    () =>
+      `Use ${nextTheme.value} ${nextTheme.value === "system" ? "theme" : "mode"}`,
   );
 
   function switchTheme() {
