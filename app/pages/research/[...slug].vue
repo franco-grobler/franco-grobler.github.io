@@ -63,7 +63,7 @@
   const breadcrumbs = ref<BreadcrumbItem[]>([
     {
       icon: "lucide:library",
-      label: "Research",
+      label: "Research and Writing",
       to: "/research",
     },
     {
