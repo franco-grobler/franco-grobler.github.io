@@ -69,7 +69,7 @@
     {
       icon: "lucide:microscope",
       label: page.value.title,
-      to: "/research/" + route.path,
+      to: route.path,
     },
   ]);
 

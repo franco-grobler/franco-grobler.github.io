@@ -40,7 +40,7 @@
     {
       icon: "lucide:letter-text",
       label: page.value.title,
-      to: "/blog/" + route.path,
+      to: route.path,
     },
   ]);
 

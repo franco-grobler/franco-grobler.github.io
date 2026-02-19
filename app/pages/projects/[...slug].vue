@@ -55,12 +55,12 @@
     {
       icon: "lucide:folder-kanban",
       label: "Projects",
-      to: "/project",
+      to: "/projects",
     },
     {
       icon: "lucide:git-branch",
       label: page.value.title,
-      to: "/project/" + route.path,
+      to: route.path,
     },
   ]);
 
