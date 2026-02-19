@@ -40,7 +40,8 @@
           <UButton
             icon="i-lucide-menu"
             color="neutral"
-            variant="outline"
+            variant="ghost"
+            aria-label="Open navigation menu"
           />
 
           <template #content-bottom>
@@ -58,17 +59,24 @@
 </template>
 
 <script setup lang="ts">
-  import type { NavigationMenuItem, DropdownMenuProps } from "@nuxt/ui";
+  import type { NavigationMenuItem, DropdownMenuItem } from "@nuxt/ui";
 
   import { useAppConfig } from "#app";
 
   const props = defineProps<{
     links: NavigationMenuItem[];
   }>();
+  const links = toRef(props.links);
 
   const { header } = useAppConfig();
 
-  const mobileLinks = props.links.map<DropdownMenuProps>((l) => {
-    return l;
-  });
+  const mobileLinks = computed(() =>
+    links.value.map<DropdownMenuItem>((l) => {
+      return {
+        type: "link",
+        icon: l.icon,
+        label: l.label,
+      };
+    }),
+  );
 </script>
