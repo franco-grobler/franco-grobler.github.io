@@ -41,10 +41,20 @@ export default defineAppConfig({
       slots: {
         root: "w-full relative inline-flex items-center",
       },
+      variants: {
+        variant: {
+          outline: "text-highlighted bg-default ring ring-inset ring-border",
+        },
+      },
     },
     textarea: {
       slots: {
         root: "w-full",
+      },
+      variants: {
+        variant: {
+          outline: "text-highlighted bg-default ring ring-inset ring-border",
+        },
       },
     },
   },
