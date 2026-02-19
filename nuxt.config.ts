@@ -30,6 +30,7 @@ export default defineNuxtConfig({
         "lucide:hash",
         "lucide:letter-text",
         "lucide:library",
+        "lucide:microscope",
         "lucide:moon",
         "lucide:monitor",
         "lucide:send",
