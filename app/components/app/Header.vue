@@ -76,6 +76,7 @@
         type: "link",
         icon: l.icon,
         label: l.label,
+        to: l.to,
       };
     }),
   );
