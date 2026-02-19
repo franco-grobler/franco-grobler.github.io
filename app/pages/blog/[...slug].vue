@@ -2,6 +2,7 @@
   <Page
     v-if="page"
     :title="page.title"
+    :breadcrumb-items="breadcrumbs"
   >
     <ContentRenderer
       v-if="page"
@@ -14,6 +15,7 @@
   import { createError, useAsyncData } from "#app";
   import { queryCollection } from "#imports";
   import { useRoute } from "vue-router";
+  import type { BreadcrumbItem } from "@nuxt/ui";
 
   const route = useRoute();
 
@@ -28,6 +30,19 @@
       fatal: true,
     });
   }
+
+  const breadcrumbs = ref<BreadcrumbItem[]>([
+    {
+      icon: "lucide:book-open-text",
+      label: "Blogs",
+      to: "/blog",
+    },
+    {
+      icon: "lucide:letter-text",
+      label: page.value.title,
+      to: "/blog/" + route.path,
+    },
+  ]);
 
   useSeoMeta({
     title: page.value.seo.title,
