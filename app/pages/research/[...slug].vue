@@ -3,6 +3,7 @@
     v-if="page"
     :title="page.title"
     :description="page.description"
+    :breadcrumb-items="breadcrumbs"
   >
     <template #title>
       <div class="flex flex-row items-center justify-between">
@@ -42,6 +43,7 @@
 <script setup lang="ts">
   import { createError, useAsyncData } from "#app";
   import { queryCollection } from "#imports";
+  import type { BreadcrumbItem } from "@nuxt/ui";
   import { useRoute } from "vue-router";
 
   const route = useRoute();
@@ -57,6 +59,19 @@
       fatal: true,
     });
   }
+
+  const breadcrumbs = ref<BreadcrumbItem[]>([
+    {
+      icon: "lucide:library",
+      label: "Research",
+      to: "/research",
+    },
+    {
+      icon: "lucide:microscope",
+      label: page.value.title,
+      to: "/research/" + route.path,
+    },
+  ]);
 
   useSeoMeta({
     title: page.value.seo.title,
