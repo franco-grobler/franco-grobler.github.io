@@ -1,5 +1,11 @@
 <template>
   <UPage class="mt-20">
+    <UBreadcrumb
+      v-if="breadcrumbItems"
+      :items="breadcrumbItems"
+      class="mb-4"
+    />
+
     <slot name="title">
       <h1
         v-if="title"
@@ -25,8 +31,11 @@
 </template>
 
 <script setup lang="ts">
+  import type { BreadcrumbItem } from "@nuxt/ui";
+
   defineProps<{
     title?: string;
     description?: string;
+    breadcrumbItems?: BreadcrumbItem[];
   }>();
 </script>

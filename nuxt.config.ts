@@ -20,11 +20,17 @@ export default defineNuxtConfig({
     clientBundle: {
       icons: [
         "lucide:arrow-right",
+        "lucide:book-open-text",
         "lucide:clock",
         "lucide:cloud",
         "lucide:code-xml",
         "lucide:external-link",
+        "lucide:folder-kanban",
+        "lucide:git-branch",
         "lucide:hash",
+        "lucide:letter-text",
+        "lucide:library",
+        "lucide:microscope",
         "lucide:moon",
         "lucide:monitor",
         "lucide:send",

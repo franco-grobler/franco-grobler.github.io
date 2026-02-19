@@ -78,6 +78,11 @@
   --sidebar-accent-foreground: #e5e5e5;
   --sidebar-border: rgba(255, 255, 255, 0.1);
   --sidebar-ring: rgba(255, 255, 255, 0.2);
+
+  --ui-bg: var(--secondary);
+  --ui-bg-inverted: var(--secondary-foreground);
+
+  --ui-text-dimmed: var(--muted-foreground);
 }
 
 @theme inline {

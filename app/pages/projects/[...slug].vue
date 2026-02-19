@@ -3,6 +3,7 @@
     v-if="page"
     :title="page.title"
     :description="page.description"
+    :breadcrumb-items="breadcrumbs"
   >
     <template #header>
       <div class="mt-4">
@@ -33,6 +34,7 @@
 <script setup lang="ts">
   import { createError, useAsyncData } from "#app";
   import { queryCollection } from "#imports";
+  import type { BreadcrumbItem } from "@nuxt/ui";
   import { useRoute } from "vue-router";
 
   const route = useRoute();
@@ -48,6 +50,19 @@
       fatal: true,
     });
   }
+
+  const breadcrumbs = ref<BreadcrumbItem[]>([
+    {
+      icon: "lucide:folder-kanban",
+      label: "Projects",
+      to: "/projects",
+    },
+    {
+      icon: "lucide:git-branch",
+      label: page.value.title,
+      to: route.path,
+    },
+  ]);
 
   useSeoMeta({
     title: page.value.seo.title,
