@@ -11,9 +11,6 @@ heading:
 information:
   title: Contact Information
   links:
-    - icon: "lucide:mail"
-      label: Email
-      email: true
     - icon: "lucide:linkedin"
       label: LinkedIn
       link: "https://www.linkedin.com/in/franco-grobler-4b26a3156/"

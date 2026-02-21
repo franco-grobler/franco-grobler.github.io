@@ -7,7 +7,6 @@ export default defineAppConfig({
       alt: "Profile picture",
     },
     meetingLink: "https://cal.com/",
-    email: process.env.CONTACT_EMAIL,
     available: true,
     staticForms: {
       url: "https://api.staticforms.dev/submit",
@@ -82,9 +81,8 @@ export default defineAppConfig({
       },
       {
         "icon": "lucide:mail",
-        "target": "_blank",
+        "to": { path: "/contact", hash: "#send-message" },
         "aria-label": "LinkedIn",
-        "email": true,
       },
     ],
   },

@@ -34,7 +34,10 @@
         </div>
       </ContainerContactSection>
 
-      <ContainerContactSection title="Send a message">
+      <ContainerContactSection
+        title="Send a message"
+        anchor="#send-message"
+      >
         <FormsContact />
       </ContainerContactSection>
     </div>
