@@ -21,7 +21,7 @@ describe("Contact card", () => {
       props: {
         icon: "i-lucide-mail",
         label: "Email",
-        email: true,
+        link: "mailto:hello@test.co",
       },
     });
 
