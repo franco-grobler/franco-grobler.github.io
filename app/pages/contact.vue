@@ -11,17 +11,8 @@
       >
         <div class="flex flex-col gap-4">
           <template v-if="info.links">
-            <template
-              v-for="(l, idx) in info.links"
-              :key="idx"
-            >
-              <ClientOnly v-if="l.email">
-                <CardContact v-bind="l" />
-              </ClientOnly>
-              <CardContact
-                v-else
-                v-bind="l"
-              />
+            <template v-for="l in info.links">
+              <CardContact v-bind="l" />
             </template>
           </template>
 
@@ -36,7 +27,7 @@
 
       <ContainerContactSection
         title="Send a message"
-        anchor="#send-message"
+        anchor="send-message"
       >
         <FormsContact />
       </ContainerContactSection>

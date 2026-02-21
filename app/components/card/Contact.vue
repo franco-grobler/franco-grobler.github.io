@@ -28,6 +28,6 @@
   defineProps<{
     icon: string;
     label: string;
-    link?: string;
+    link: string;
   }>();
 </script>
