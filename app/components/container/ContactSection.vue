@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="flex- flex-col gap-4">
+    <section class="flex flex-col gap-4">
       <h2
         :id="anchor"
         class="mb-6"
