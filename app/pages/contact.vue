@@ -11,7 +11,10 @@
       >
         <div class="flex flex-col gap-4">
           <template v-if="info.links">
-            <template v-for="l in info.links">
+            <template
+              v-for="(l, idx) in info.links"
+              :key="idx"
+            >
               <CardContact v-bind="l" />
             </template>
           </template>
