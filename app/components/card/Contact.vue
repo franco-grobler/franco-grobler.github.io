@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="href">
+  <NuxtLink :to="link">
     <div
       class="bg-secondary group flex items-center gap-4 rounded-xl border border-white/10 p-4 transition-colors hover:border-white/20"
     >
@@ -17,12 +17,7 @@
         <p
           class="group-hover:text-accent max-w-full text-wrap transition-colors"
         >
-          <ClientOnly v-if="email">
-            <a :href="href">{{ renderedEmail }}</a>
-          </ClientOnly>
-          <template v-else>
-            {{ href }}
-          </template>
+          {{ link }}
         </p>
       </div>
     </div>
@@ -30,25 +25,9 @@
 </template>
 
 <script setup lang="ts">
-  import useEmail from "~/composables/email";
-
-  const props = defineProps<{
+  defineProps<{
     icon: string;
     label: string;
-    link?: string;
-    email?: boolean;
+    link: string;
   }>();
-
-  const emailObfuscation = useEmail();
-
-  const encryptedEmail = await emailObfuscation.encryptEmail(
-    emailObfuscation.email,
-  );
-
-  const renderedEmail = computed(() =>
-    import.meta.client ? emailObfuscation.email : encryptedEmail,
-  );
-  const href = computed<string>(() =>
-    props.email ? `mailto:${renderedEmail.value}` : (props.link ?? "/"),
-  );
 </script>

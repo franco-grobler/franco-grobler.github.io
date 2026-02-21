@@ -15,13 +15,7 @@
               v-for="(l, idx) in info.links"
               :key="idx"
             >
-              <ClientOnly v-if="l.email">
-                <CardContact v-bind="l" />
-              </ClientOnly>
-              <CardContact
-                v-else
-                v-bind="l"
-              />
+              <CardContact v-bind="l" />
             </template>
           </template>
 
@@ -34,7 +28,10 @@
         </div>
       </ContainerContactSection>
 
-      <ContainerContactSection title="Send a message">
+      <ContainerContactSection
+        title="Send a message"
+        anchor="send-message"
+      >
         <FormsContact />
       </ContainerContactSection>
     </div>
