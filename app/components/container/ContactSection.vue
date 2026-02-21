@@ -1,14 +1,12 @@
 <template>
   <div>
     <section class="flex- flex-col gap-4">
-      <NuxtLink :href="'#' + anchor">
-        <h2
-          :id="anchor"
-          class="mb-6"
-        >
-          {{ title }}
-        </h2>
-      </NuxtLink>
+      <h2
+        :id="anchor"
+        class="mb-6"
+      >
+        {{ title }}
+      </h2>
 
       <slot />
     </section>
