@@ -17,7 +17,7 @@
         <p
           class="group-hover:text-accent max-w-full text-wrap transition-colors"
         >
-          <a :href="link">{{ link }}</a>
+          {{ link }}
         </p>
       </div>
     </div>
