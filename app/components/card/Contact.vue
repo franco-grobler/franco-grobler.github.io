@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-  const props = defineProps<{
+  defineProps<{
     icon: string;
     label: string;
     link?: string;
