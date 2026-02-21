@@ -82,7 +82,7 @@ export default defineAppConfig({
       {
         "icon": "lucide:mail",
         "to": { path: "/contact", hash: "#send-message" },
-        "aria-label": "LinkedIn",
+        "aria-label": "Send a message",
       },
     ],
   },
