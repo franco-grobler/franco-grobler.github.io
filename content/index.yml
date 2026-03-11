@@ -1,8 +1,8 @@
 seo:
-  title: "Franco Grobler - Engineer"
+  title: Franco Grobler - Engineer
   description:
-    "Welcome to my portfolio! I'm Franco Grobler, an electric and electronic
-    engineer writing code and building things."
+    Welcome to my portfolio! I'm Franco Grobler, an electric and electronic
+    engineer writing code and building things.
 
 intro:
   title: Building scalable systems with precision
@@ -10,7 +10,7 @@ intro:
   description:
     Specialised in distributed systems, cloud infrastructure, and full-stack
     development. Currently completing a Master's in Computer Science while
-    architecting solutions at scale.
+    developing deployment solutions for thousands of monthly deployments.
   links:
     - to: /projects
       label: View projects
@@ -35,10 +35,10 @@ skills:
         Designing fault-tolerant architectures that handle millions of requests
         with high reliability.
       icon: lucide:server
-    - title: "Cloud Infrastructure"
+    - title: Cloud Infrastructure
       description:
-        "Implementing CI/CD pipelines, container orchestration, and
-        infrastructure as code."
+        Implementing CI/CD pipelines, container orchestration, and
+        infrastructure as code.
       icon: lucide:cloud
 
 projects:
