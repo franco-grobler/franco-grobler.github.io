@@ -46,7 +46,7 @@ projects:
   link:
     label: View all projects
     route: /projects
-  cards: ["cowsay-rs", "localstack-ses-viewer"]
+  cards: ["cowsay-rs", "docaroo", "localstack-ses-viewer"]
 
 research:
   title: Writing & Research
