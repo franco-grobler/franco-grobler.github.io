@@ -4,15 +4,17 @@
     :title="heading.title"
     :description="heading.description"
   >
-    <CardProject
-      v-for="(p, idx) in projects"
-      :key="idx"
-      :title="p.title"
-      :description="p.description"
-      :tags="p.tags"
-      :impact="p.impact"
-      :slug="p.stem.split('/')[1] as string"
-    />
+    <div class="flex flex-col gap-6">
+      <CardProject
+        v-for="(p, idx) in projects"
+        :key="idx"
+        :title="p.title"
+        :description="p.description"
+        :tags="p.tags"
+        :impact="p.impact"
+        :slug="p.stem.split('/')[1] as string"
+      />
+    </div>
   </Page>
 </template>
 
