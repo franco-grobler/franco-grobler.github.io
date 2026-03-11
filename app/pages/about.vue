@@ -114,7 +114,7 @@
 </script>
 
 <style lang="css" scoped>
-  @reference "~/assets/css/main.css";
+  @reference "~/assets/css/index.css";
 
   h2 {
     @apply mb-4;
