@@ -6,8 +6,8 @@ tags: ["Vue", "Github Actions", "LocalStack", "TypeScript"]
 impact: Increased team velocity by providing an easier feedback loop.
 readTime: 2
 links:
-  - icon: "i-simple-icons-github"
-    url: https://github.com/franco-grobler/localstack-ses-viewer
+  - url: https://github.com/franco-grobler/localstack-ses-viewer
+    icon: "i-simple-icons-github"
     label: View Code
   - url: https://franco-grobler.github.io/localstack-ses-viewer/
     icon: "lucide:external-link"
