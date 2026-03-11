@@ -3,7 +3,7 @@ title: Cowsay RS
 description: Fast ASCII cows.
 tags: ["Rust", "Github Actions"]
 impact: Learning a new language.
-readTime: 2
+readTime: 3
 links:
   - url: https://github.com/franco-grobler/cowsay-rs
     icon: "i-simple-icons-github"
